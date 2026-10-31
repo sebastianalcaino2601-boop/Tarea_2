@@ -1,0 +1,140 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "toc_visible": true,
+      "authorship_tag": "ABX9TyNaw8lAgCAhsSN2tpde35XL",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "java",
+      "display_name": "Java"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/sebastianalcaino2601-boop/Tarea_2/blob/main/Tarea_2_edcc\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!curl -L https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip -o ijava.zip && unzip -o ijava.zip && python3 install.py --sys-prefix"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qPvYyVW45tNF",
+        "outputId": "c1fc792b-ea61-446c-f0f7-bfedc76d2bc8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n",
+            "                                 Dload  Upload   Total   Spent    Left  Speed\n",
+            "\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n",
+            "\r100 3287k  100 3287k    0     0  23.1M      0 --:--:-- --:--:-- --:--:-- 23.1M\n",
+            "Archive:  ijava.zip\n",
+            "  inflating: java/ijava-1.3.0.jar    \n",
+            "  inflating: java/kernel.json        \n",
+            "  inflating: java/dependency-licenses/commons-lang3-3.8.1.jar/META-INF/LICENSE.txt  \n",
+            "  inflating: java/dependency-licenses/commons-lang3-3.8.1.jar/META-INF/NOTICE.txt  \n",
+            "  inflating: java/dependency-licenses/dependencies.html  \n",
+            "  inflating: java/dependency-licenses/dependencies.json  \n",
+            "  inflating: java/dependency-licenses/ivy-2.5.0-rc1.jar/META-INF/LICENSE  \n",
+            "  inflating: java/dependency-licenses/ivy-2.5.0-rc1.jar/META-INF/NOTICE  \n",
+            "  inflating: java/dependency-licenses/maven-artifact-3.6.0.jar/META-INF/LICENSE  \n",
+            "  inflating: java/dependency-licenses/maven-artifact-3.6.0.jar/META-INF/NOTICE  \n",
+            "  inflating: java/dependency-licenses/maven-builder-support-3.6.0.jar/META-INF/LICENSE  \n",
+            "  inflating: java/dependency-licenses/maven-builder-support-3.6.0.jar/META-INF/NOTICE  \n",
+            "  inflating: java/dependency-licenses/maven-model-3.6.0.jar/META-INF/LICENSE  \n",
+            "  inflating: java/dependency-licenses/maven-model-3.6.0.jar/META-INF/NOTICE  \n",
+            "  inflating: java/dependency-licenses/maven-model-builder-3.6.0.jar/META-INF/LICENSE  \n",
+            "  inflating: java/dependency-licenses/maven-model-builder-3.6.0.jar/META-INF/NOTICE  \n",
+            "  inflating: java/dependency-licenses/plexus-utils-3.1.0.jar/META-INF/LICENSE  \n",
+            "  inflating: java/dependency-licenses/plexus-utils-3.1.0.jar/META-INF/NOTICE  \n",
+            "  inflating: install.py              \n",
+            "/content/install.py:164: DeprecationWarning: replace is ignored. Installing a kernelspec always replaces an existing installation\n",
+            "  install_dest = KernelSpecManager().install_kernel_spec(\n",
+            "Installed java kernel into \"/usr/share/jupyter/kernels/java\"\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile Main.java\n",
+        "public class Main {\n",
+        "    public static void main(String[] args) {\n",
+        "        menu();\n",
+        "    }\n",
+        "\n",
+        "    public static void menu() {\n",
+        "      System.out.println(\"\"\"\n",
+        "                    ===MENU DE OPCIONES===\n",
+        "                    1. Listar por pantalla el conjunto y la relación.\n",
+        "                    2. Evaluar Relacion Binaria reflexiba.\n",
+        "                    3. \"\"\");\n",
+        "    }\n",
+        "}"
+      ],
+      "metadata": {
+        "id": "r1ejUau459hB",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "db611b27-1c3b-4a30-e128-fda3060cf6f2"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Overwriting Main.java\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!javac Main.java && java Main 2>&1 | grep -i -v \"warning\""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "EdBNxZm37sag",
+        "outputId": "b441463d-af97-4d37-fc7c-b270c714457f"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0.000s][warning][os,container] Cgroup memory controller path at '/sys/fs/cgroup' seems to have moved to '/../../jupyter-children', detected limits won't be accurate\n",
+            "[0.000s][warning][os,container] Cgroup cpu controller path at '/sys/fs/cgroup' seems to have moved to '/../../jupyter-children', detected limits won't be accurate\n",
+            "1. Listar por pantalla el conjunto y la relación.\n",
+            "2. Evaluar Relacion Binaria reflexiba.\n",
+            "\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
