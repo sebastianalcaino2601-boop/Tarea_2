@@ -5,7 +5,7 @@
     "colab": {
       "provenance": [],
       "toc_visible": true,
-      "authorship_tag": "ABX9TyNx7qr+mKLAfzJvDgQ19TJp",
+      "authorship_tag": "ABX9TyMnS07x6l48BDGPkb5nRU25",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -79,8 +79,8 @@
         "                        }\n",
         "\n",
         "        }while(op != 11);\n",
+        "        sc.close();\n",
         "    }\n",
-        "    sc.close();\n",
         "}"
       ],
       "metadata": {
